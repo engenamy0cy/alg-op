@@ -2,7 +2,7 @@ import random
 import time 
 
 window_length = 5
-numbers = [random.randint(1, 15) for _ in range(10000)]
+numbers = [random.randint(1, 15) for _ in range(10000000)]
 
 print(f"создан массив из {len(numbers)} элементов")
 
@@ -21,11 +21,28 @@ for i in range(len(numbers) - window_length + 1):
 
     if current_sum > max_sum_window:
         max_sum_window = current_sum
-        best_window = i
+        best_window = numbers[i : i + window_length]
 
 end_time = time.time()
 time_window = end_time - start_time
-print(f"best window: {best_window}")
-print(f"max summ: {max_sum_window}")
-print(f"time used: {time_window} s.")
+print(best_window)
+print(max_sum_window)
+print(time_window)
 
+
+
+
+# def max_sum_window(array,window_length):
+#     current_sum = sum(array[:window_length])
+#     best_sum = current_sum
+#     for right in range(window_length,len(array)):
+#         left_leaving = right - window_length
+#         current_sum += array[right] - array[left_leaving]
+#         best_sum = max(best_sum,current_sum)
+#     return best_sum
+# start_time = time.time()
+# result = max_sum_window(numbers, window_length)
+# end_time = time.time()
+# time_window = end_time - start_time
+# print(f"максимальная сумма окна длины:{window_length}")
+# print(f"{time_window} сек")
