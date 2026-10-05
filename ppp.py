@@ -25,3 +25,14 @@
 #     return "/" + "/".join(stack)
 # print(simplify_path("a/./b"))
 
+from collections import deque
+queue = deque()
+queue.append("Анна")
+queue.append("Вика")
+queue.append("Боря")
+first = queue.popleft() #анна
+second = queue.popleft()
+
+print(first)
+print(second)
+print(queue)
