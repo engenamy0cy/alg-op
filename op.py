@@ -710,6 +710,7 @@ def reverse_list(head):
 # Так же Анну Борю и Вику положили в стек и сняли всех, в каком порядке выйдут
 # чем отличается от очереди
 
+<<<<<<< HEAD
 
 
 
@@ -830,3 +831,20 @@ def level_order(root):
 # Графы
 # Backtraking
 # Динамика
+=======
+from collections import deque
+queue = deque()
+queue.append("Анна")
+queue.append("Вика")
+queue.append("Боря")
+first = queue.popleft() #анна
+# остались боря вика
+# deque.append и deque.popleft - O(1)
+# list.pop() не очередь каждый вызов
+# сдвигает все оставшиеся O(n)
+# тысяча таких вызовов уже квадрат
+
+array = ["Анна","Вика", "Боря"]
+
+# очередь обхода по уровням
+>>>>>>> 05bf5ebe26b00d18053a5f3d1220fca9b01f16ae
