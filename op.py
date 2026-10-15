@@ -1016,3 +1016,18 @@ array = []
 
 # вернуть два индекса (любой порядок) сумма которых равна 9
 # если нет - None
+
+
+
+
+
+# соортировка выбором
+def selection_sort(array):
+    n = len(array)
+    for i in range (n): # для каждой позиции в нашем массиве
+        min_inx = i # устанавливаем что каждый раз текущий эллемент массива минимальный
+        for j in range(i+1,n): # ищем минимум в неотсортированной части
+            if array[j] < array[min_inx]:
+                min_inx = i # обновляем индекс минимума
+        array[j],array[min_inx] = array[min_inx],array[j] # ставим минимум а свое место
+        return array
